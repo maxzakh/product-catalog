@@ -15,3 +15,7 @@ var repository = [
         types: ['psychic', 'water']
     }
 ];
+
+for (let i = 0; i <= repository.length; i++) {
+    document.write(repository[i].name + " ");
+}
