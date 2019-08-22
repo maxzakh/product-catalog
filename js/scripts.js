@@ -18,4 +18,9 @@ var repository = [
 
 for (let i = 0; i <= repository.length; i++) {
     document.write(repository[i].name + " ");
+    document.write("\(height: " + repository[i].height + "\) ");
+    if (repository[i].height < 2) {
+      document.write("- It's so small ");
+    }
+  document.write("<br>");
 }
