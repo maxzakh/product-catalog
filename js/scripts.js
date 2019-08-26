@@ -31,6 +31,6 @@ var repository2 = {
 //   document.write("<br>");
 // }
 
-Object.keys(repository2).forEach(function(property) {
-  document.write([property] + ': ' + repository2[property] + '<br>');
+repository.forEach(pokemon => {
+  document.write(pokemon.name + " height: " + pokemon.height + " " + pokemon.types + "<br>");
 });
