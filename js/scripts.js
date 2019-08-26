@@ -31,6 +31,13 @@ var repository2 = {
 //   document.write("<br>");
 // }
 
-repository.forEach(pokemon => {
-  document.write(pokemon.name + " height: " + pokemon.height + " " + pokemon.types + "<br>");
+repository.forEach((pokemon) => {
+  Object.keys(pokemon).forEach(function(property) {
+    if (property === "name") {
+      document.write(`${pokemon[property]}<br>`);
+    } else {
+      document.write(`${property}: ${pokemon[property]} <br>`);
+    }
+  });
 });
+
