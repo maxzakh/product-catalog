@@ -45,8 +45,10 @@ var pokemonRepository = (function () {
   var repository = []; // empty array
 
   return {
-    add: function(pokemon typeof {a: 1} === "Object") {
+    add: function(pokemon) {
+      if (typeof myVariable === 'Object') {
       repository.push(pokemon);
+      }
     },
     getAll: function() {
       return repository;
