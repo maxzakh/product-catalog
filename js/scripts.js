@@ -45,7 +45,7 @@ var pokemonRepository = (function () {
   var repository = []; // empty array
 
   return {
-    add: function(pokemon) {
+    add: function(pokemon typeof {a: 1} === "Object") {
       repository.push(pokemon);
     },
     getAll: function() {
@@ -58,6 +58,6 @@ console.log(pokemonRepository.getAll()); // []
 pokemonRepository.add({ name: 'Pikachu' });
 console.log(pokemonRepository.getAll()); // [ { name: 'Pikachu' } ]
 
-pokemonRepository.forEach(pokemon => {
+pokemonRepository.getAll().forEach(pokemon => {
   console.log(pokemon);
 });
