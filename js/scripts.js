@@ -46,7 +46,7 @@ var pokemonRepository = (function () {
 
   return {
     add: function(pokemon) {
-      if (typeof myVariable === 'Object') {
+      if (typeof myVariable === 'object') {
       repository.push(pokemon);
       }
     },
