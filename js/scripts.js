@@ -38,14 +38,12 @@ repository.forEach((pokemon) => {
     button.classList.add('pokeDex');
     button.innerHTML = pokemon.name;
 
-    function addListItem(pokemon) {
-    }
+    var listItem = document.createElement('li');
 });
 
 var pokemonRepository = (function () {
     return {
       addListItem: function(pokemon) {
-        var listItem = document.createElement('li');
         $pokeList.appendChild(listItem);
         listItem.appendChild(button);
       },
@@ -54,6 +52,10 @@ var pokemonRepository = (function () {
       }
     };
   })();
+
+  console.log(pokemonRepository.addListItem()); // []
+  pokemonRepository.addListItem(pokemon);
+  // console.log(pokemonRepository.getAll()); // [ { name: 'Pikachu' } ]
 
 // repository.forEach((pokemon) => {
 //     var listItem = document.createElement('li');
@@ -91,10 +93,6 @@ var pokemonRepository = (function () {
 //     }
 //   };
 // })();
-
-console.log(pokemonRepository.getAll()); // []
-pokemonRepository.addListItem(pokemon);
-// console.log(pokemonRepository.getAll()); // [ { name: 'Pikachu' } ]
 
 // pokemonRepository.getAll().forEach(pokemon => {
 //   console.log(pokemon);
