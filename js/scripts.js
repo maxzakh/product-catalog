@@ -1,20 +1,20 @@
-// var repository = [
-//     {
-//         name: 'Snorlax',
-//         height: 2.1,
-//         types: ['normal']
-//     },
-//     {
-//         name: 'Electabuzz',
-//         height: 1.1,
-//         types: ['electric']
-//     },
-//     {
-//         name: 'Slowbro',
-//         height: 2.1,
-//         types: ['psychic', 'water']
-//     }
-// ];
+var repository = [
+    {
+        name: 'Snorlax',
+        height: 2.1,
+        types: ['normal']
+    },
+    {
+        name: 'Electabuzz',
+        height: 1.1,
+        types: ['electric']
+    },
+    {
+        name: 'Slowbro',
+        height: 2.1,
+        types: ['psychic', 'water']
+    }
+];
 
 // var repository2 = {
 //   name: 'Snorlax',
@@ -31,6 +31,29 @@
 // //   document.write("<br>");
 // // }
 
+var $pokeList = document.querySelector('.pokeList');
+
+repository.forEach((pokemon) => {
+    var listItem = document.createElement('li');
+    $pokeList.appendChild(listItem);
+    var button = document.createElement('button');
+    button.classList.add('pokeDex');
+    button.innerHTML = pokemon.name;
+    listItem.appendChild(button);
+});
+
+// repository.forEach((pokemon) => {
+//     var listItem = document.createElement('li');
+//     $pokeList.appendChild(listItem);
+//     var button = document.createElement('button');
+
+//     function addListItem(pokemon) {
+//         button.classList.add('pokeDex');
+//         button.innerHTML = pokemon.name;
+//         listItem.appendChild(button);
+//     }
+// });
+
 // repository.forEach((pokemon) => {
 //   Object.keys(pokemon).forEach(function(property) {
 //     if (property === "name") {
@@ -41,25 +64,25 @@
 //   });
 // });
 
-var pokemonRepository = (function () {
-  var repository = []; // empty array
+// var pokemonRepository = (function () {
+//   var repository = []; // empty array
 
-  return {
-    add: function(pokemon) {
-      if (typeof pokemon === 'object') {
-      repository.push(pokemon);
-      }
-    },
-    getAll: function() {
-      return repository;
-    }
-  };
-})();
+//   return {
+//     add: function(pokemon) {
+//       if (typeof pokemon === 'object') {
+//       repository.push(pokemon);
+//       }
+//     },
+//     getAll: function() {
+//       return repository;
+//     }
+//   };
+// })();
 
-console.log(pokemonRepository.getAll()); // []
-pokemonRepository.add({ name: 'Pikachu' });
-console.log(pokemonRepository.getAll()); // [ { name: 'Pikachu' } ]
+// console.log(pokemonRepository.getAll()); // []
+// pokemonRepository.add({ name: 'Pikachu' });
+// console.log(pokemonRepository.getAll()); // [ { name: 'Pikachu' } ]
 
-pokemonRepository.getAll().forEach(pokemon => {
-  console.log(pokemon);
-});
+// pokemonRepository.getAll().forEach(pokemon => {
+//   console.log(pokemon);
+// });
