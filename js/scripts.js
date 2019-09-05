@@ -34,14 +34,14 @@ var repository = [
 var $pokeList = document.querySelector('.pokeList');
 
 repository.forEach((pokemon) => {
-    // $pokeList.appendChild(listItem);
     var button = document.createElement('button');
     button.classList.add('pokeDex');
     button.innerHTML = pokemon.name;
-    // listItem.appendChild(button);
 
     function addListItem(pokemon) {
         var listItem = document.createElement('li');
+        $pokeList.appendChild(listItem);
+        listItem.appendChild(button);
     }
 });
 
