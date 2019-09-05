@@ -38,11 +38,9 @@ repository.forEach((pokemon) => {
     button.classList.add('pokeDex');
     button.innerHTML = pokemon.name;
 
-    function addListItem(pokemon) {
-        var listItem = document.createElement('li');
-        $pokeList.appendChild(listItem);
-        listItem.appendChild(button);
-    }
+    var listItem = document.createElement('li');
+    $pokeList.appendChild(listItem);
+    listItem.appendChild(button);
 });
 
 // repository.forEach((pokemon) => {
