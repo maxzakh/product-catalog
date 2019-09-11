@@ -53,11 +53,7 @@ const pokemonRepository = (function () {
       pokemonRepository.showDetails(pokemon);
     },
 
-    showDetails() {
-      // document.querySelector(".pokeDex").addEventListener("click", function() {
-      //   console.log(pokemon.name);
-      // })
-
+    showDetails(pokemon) {
       document.querySelectorAll(".pokeDex").forEach((pokemon) => {
         addEventListener("click", function() {
           console.log(pokemon.name);
