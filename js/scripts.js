@@ -49,11 +49,19 @@ const pokemonRepository = (function () {
       var listItem = document.createElement("li");
       $pokeList.appendChild(listItem);
       listItem.appendChild(button);
+      
+      pokemonRepository.showDetails(pokemon);
     },
 
-    showDetails(pokemon) {
-      document.querySelector(".pokeDex").addEventListener("click", function() {
-        console.log(pokemon.name);
+    showDetails() {
+      // document.querySelector(".pokeDex").addEventListener("click", function() {
+      //   console.log(pokemon.name);
+      // })
+
+      document.querySelectorAll(".pokeDex").forEach((pokemon) => {
+        addEventListener("click", function() {
+          console.log(pokemon.name);
+        })
       })
     },
 
