@@ -49,14 +49,13 @@ const pokemonRepository = (function () {
       var listItem = document.createElement("li");
       $pokeList.appendChild(listItem);
       listItem.appendChild(button);
-      
-      pokemonRepository.showDetails(pokemon);
     },
 
     showDetails(pokemon) {
-      addEventListener("click", function() {
-        console.log(pokemon.name);
-      })
+      // addEventListener("click", function() {
+      //   console.log(pokemon.name);
+      // })
+      console.log(pokemon.name);
     },
 
     getAll() {
@@ -74,7 +73,9 @@ pokemonRepository.getAll().forEach((pokemon) => {
   $pokeList.appendChild(listItem);
   listItem.appendChild(button);
 
-  pokemonRepository.showDetails(pokemon);
+  button.addEventListener("click", function() {
+    console.log(pokemon.name);
+  });
 });
 
 console.log(pokemonRepository.add({ name: "Pikachu" }));
