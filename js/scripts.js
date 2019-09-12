@@ -74,14 +74,14 @@ pokemonRepository.getAll().forEach((pokemon) => {
   listItem.appendChild(button);
 
   button.addEventListener("click", function() {
-    console.log(pokemon.name);
+    pokemonRepository.showDetails(pokemon);
   });
 });
 
 console.log(pokemonRepository.add({ name: "Pikachu" }));
 console.log(pokemonRepository.addListItem({ name: "Pikachu" }));
 console.log(pokemonRepository.getAll());
-console.log(pokemonRepository.showDetails());
+console.log(pokemonRepository.showDetails(pokemonRepository));
 
 // repository.forEach((pokemon) => {
 //     var listItem = document.createElement("li");
