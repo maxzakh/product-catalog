@@ -49,18 +49,7 @@ const pokemonRepository = (function () {
 }());
 
 pokemonRepository.getAll().forEach((pokemon) => {
-  // var button = document.createElement("button");
-  // button.classList.add("pokeDex");
-  // button.innerHTML = pokemon.name;
-
-  // var listItem = document.createElement("li");
-  // $pokeList.appendChild(listItem);
-  // listItem.appendChild(button);
   pokemonRepository.addListItem(pokemon);
-
-  // button.addEventListener("click", function() {
-  //   pokemonRepository.showDetails(pokemon);
-  // });
 });
 
 console.log(pokemonRepository.add({ name: "Pikachu" }));
