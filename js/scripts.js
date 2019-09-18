@@ -32,6 +32,10 @@ const pokemonRepository = (function () {
       var listItem = document.createElement("li");
       $pokeList.appendChild(listItem);
       listItem.appendChild(button);
+
+      button.addEventListener("click", function() {
+        pokemonRepository.showDetails(pokemon);
+      });
     },
 
     showDetails(pokemon) {
@@ -54,9 +58,9 @@ pokemonRepository.getAll().forEach((pokemon) => {
   // listItem.appendChild(button);
   pokemonRepository.addListItem(pokemon);
 
-  button.addEventListener("click", function() {
-    pokemonRepository.showDetails(pokemon);
-  });
+  // button.addEventListener("click", function() {
+  //   pokemonRepository.showDetails(pokemon);
+  // });
 });
 
 console.log(pokemonRepository.add({ name: "Pikachu" }));
