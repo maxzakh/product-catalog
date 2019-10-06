@@ -77,6 +77,6 @@ var pokemonRepository = (function () {
 pokemonRepository.loadList().then(function () {
   // Now the data is loaded!
   pokemonRepository.getAll().forEach(function (pokemon) {
-    addListItem(pokemon);
+    pokemonRepository.addListItem(pokemon);
   });
 });
