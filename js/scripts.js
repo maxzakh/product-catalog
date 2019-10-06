@@ -6,11 +6,11 @@ var pokemonRepository = (function () {
 
   // Other functions remain here
   return {
-    function add(pokemon) {
+    add(pokemon) {
       repository.push(pokemon);
-    }
+    },
 
-    function addListItem(pokemon) {
+    addListItem(pokemon) {
       var button = document.createElement("button");
       button.classList.add("pokeDex");
       button.innerHTML = pokemon.name;
@@ -22,15 +22,15 @@ var pokemonRepository = (function () {
       button.addEventListener("click", function () {
         pokemonRepository.showDetails(pokemon);
       });
-    }
+    },
 
-    function showDetails(pokemon) {
+    showDetails(pokemon) {
       pokemonRepository.loadDetails(pokemon).then(function () {
         console.log(pokemon);
       });
-    }
+    },
 
-    function getAll() {
+    getAll() {
       return repository;
     }
   },
