@@ -5,35 +5,33 @@ var pokemonRepository = (function () {
   var apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=150';
 
   // Other functions remain here
-  return {
-    add(pokemon) {
-      repository.push(pokemon);
-    },
+  function add(pokemon) {
+    repository.push(pokemon);
+  };
 
-    addListItem(pokemon) {
-      var button = document.createElement("button");
-      button.classList.add("pokeDex");
-      button.innerHTML = pokemon.name;
+  function addListItem(pokemon) {
+    var button = document.createElement("button");
+    button.classList.add("pokeDex");
+    button.innerHTML = pokemon.name;
 
-      var listItem = document.createElement("li");
-      $pokeList.appendChild(listItem);
-      listItem.appendChild(button);
+    var listItem = document.createElement("li");
+    $pokeList.appendChild(listItem);
+    listItem.appendChild(button);
 
-      button.addEventListener("click", function () {
-        pokemonRepository.showDetails(pokemon);
-      });
-    },
+    button.addEventListener("click", function () {
+      pokemonRepository.showDetails(pokemon);
+    });
+  };
 
-    showDetails(pokemon) {
-      pokemonRepository.loadDetails(pokemon).then(function () {
-        console.log(pokemon);
-      });
-    },
+  function showDetails(pokemon) {
+    pokemonRepository.loadDetails(pokemon).then(function () {
+      console.log(pokemon);
+    });
+  };
 
-    getAll() {
-      return repository;
-    }
-  },
+  function getAll() {
+    return repository;
+  };
 
   function loadList() {
     return fetch(apiUrl).then(function (response) {
@@ -49,7 +47,7 @@ var pokemonRepository = (function () {
     }).catch(function (e) {
       console.error(e);
     })
-  },
+  };
 
   function loadDetails(item) {
     var url = item.detailsUrl;
@@ -67,8 +65,10 @@ var pokemonRepository = (function () {
 
   return {
     add: add,
+    addListItem: addListItem,
+    showDetails: showDetails,
     getAll: getAll,
-    search: search,
+    // search: search,
     loadList: loadList,
     loadDetails: loadDetails
   };
