@@ -1,16 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>Simple JS App</title>
-        <link rel="stylesheet" href="css/styles.css">
-    </head>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Simple JS App</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
 <body>
-    <ul class='pokeList'></ul>
+    <button id='show-modal'>
+        Show modal
+    </button>
+    <div id='modal-container'></div>
+    <button id='show-dialog'>
+        Show dialog
+    </button>
+    <div id='container'>
+        <ul class='pokeList'></ul>
+    </div>
     <script src="js/promise-polyfill.js"></script>
     <script src="js/fetch.umd.js"></script>
     <script src="js/scripts.js"></script>
 </body>
+
 </html>
