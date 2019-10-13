@@ -23,8 +23,11 @@ var pokemonRepository = (function () {
     var titleElement = document.createElement('h1');
     titleElement.innerText = title;
 
-    var contentElement = document.createElement('p');
-    contentElement.innerText = text;
+    // var contentElement = document.createElement('p');
+    // contentElement.innerText = text;
+
+    var contentElement = document.createElement('img');
+    contentElement.setAttribute('src', text);
 
     modal.appendChild(closeButtonElement);
     modal.appendChild(titleElement);
