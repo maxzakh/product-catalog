@@ -47,47 +47,59 @@ var pokemonRepository = (function () {
     }
   }
 
-  function showDialog(title, text) {
-    showModal(title, text);
+  // function showDialog(title, text) {
+  //   showModal(title, text);
 
-    // We want to add a confirm and cancel button to the modal
-    var modal = $modalContainer.querySelector('.modal');
+  //   // We want to add a confirm and cancel button to the modal
+  //   var modal = $modalContainer.querySelector('.modal');
 
-    var confirmButton = document.createElement('button');
-    confirmButton.classList.add('modal-confirm');
-    confirmButton.innerText = 'Confirm';
+  //   var confirmButton = document.createElement('button');
+  //   confirmButton.classList.add('modal-confirm');
+  //   confirmButton.innerText = 'Confirm';
 
-    var cancelButton = document.createElement('button');
-    cancelButton.classList.add('modal-cancel');
-    cancelButton.innerText = 'Cancel';
+  //   var cancelButton = document.createElement('button');
+  //   cancelButton.classList.add('modal-cancel');
+  //   cancelButton.innerText = 'Cancel';
 
-    modal.appendChild(confirmButton);
-    modal.appendChild(cancelButton);
+  //   modal.appendChild(confirmButton);
+  //   modal.appendChild(cancelButton);
 
-    // We want to focus the confirmButton so that the user can simply press Enter
-    confirmButton.focus();
+  //   // We want to focus the confirmButton so that the user can simply press Enter
+  //   confirmButton.focus();
 
-    return new Promise((resolve, reject) => {
-      cancelButton.addEventListener('click', hideModal);
-      confirmButton.addEventListener('click', () => {
-        dialogPromiseReject = null; // Reset this
-        hideModal();
-        resolve();
-      });
+  //   return new Promise((resolve, reject) => {
+  //     cancelButton.addEventListener('click', hideModal);
+  //     confirmButton.addEventListener('click', () => {
+  //       dialogPromiseReject = null; // Reset this
+  //       hideModal();
+  //       resolve();
+  //     });
 
-      // This can be used to reject from other functions
-      dialogPromiseReject = reject;
+  //     // This can be used to reject from other functions
+  //     dialogPromiseReject = reject;
 
-      confirmButton.addEventListener('click', () => {
-        hideModal();
-        resolve();
-      })
-    });
-  }
+  //     confirmButton.addEventListener('click', () => {
+  //       hideModal();
+  //       resolve();
+  //     })
+  //   });
+  // }
 
-  document.querySelector('#show-modal').addEventListener('click', () => {
-    showModal('hello', 'This is the modal content!');
-  });
+  // document.querySelector('#show-dialog').addEventListener('click', () => {
+  //   showDialog('Confirm action', 'Are you sure you want to do this?');
+  // });
+
+  // document.querySelector('#show-dialog').addEventListener('click', () => {
+  //   showDialog('Confirm action', 'Are you sure you want to do this?').then(function () {
+  //     alert('confirmed!');
+  //   }, () => {
+  //     alert('not confirmed');
+  //   });
+  // });
+
+  // document.querySelector('#show-modal').addEventListener('click', () => {
+  //   showModal('hello', 'This is the modal content!');
+  // });
 
   window.addEventListener('keydown', (e) => {
     if (e.key === 'Escape' && $modalContainer.classList.contains('is-visible')) {
@@ -102,18 +114,6 @@ var pokemonRepository = (function () {
     if (target === $modalContainer) {
       hideModal();
     }
-  });
-
-  document.querySelector('#show-dialog').addEventListener('click', () => {
-    showDialog('Confirm action', 'Are you sure you want to do this?');
-  });
-
-  document.querySelector('#show-dialog').addEventListener('click', () => {
-    showDialog('Confirm action', 'Are you sure you want to do this?').then(function () {
-      alert('confirmed!');
-    }, () => {
-      alert('not confirmed');
-    });
   });
 
   // Other functions remain here
