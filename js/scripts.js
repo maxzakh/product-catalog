@@ -23,9 +23,6 @@ var pokemonRepository = (function () {
     var titleElement = document.createElement('h1');
     titleElement.innerText = title;
 
-    // var contentElement = document.createElement('p');
-    // contentElement.innerText = text;
-
     var contentElement = document.createElement('img');
     contentElement.setAttribute('src', text);
 
@@ -38,7 +35,6 @@ var pokemonRepository = (function () {
   }
 
   function hideModal() {
-    var $modalContainer = document.querySelector('#modal-container');
     $modalContainer.classList.remove('is-visible');
 
     if (dialogPromiseReject) {
