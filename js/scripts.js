@@ -5,7 +5,6 @@ var pokemonRepository = (function () {
   var apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=150';
 
   var $modalContainer = document.querySelector('#modal-container');
-  var dialogPromiseReject; // This can be set later, by showDialog
 
   function showModal(title, text) {
     // Clear all existing modal content
@@ -36,11 +35,6 @@ var pokemonRepository = (function () {
 
   function hideModal() {
     $modalContainer.classList.remove('is-visible');
-
-    if (dialogPromiseReject) {
-      dialogPromiseReject();
-      dialogPromiseReject = null;
-    }
   }
 
   window.addEventListener('keydown', (e) => {
