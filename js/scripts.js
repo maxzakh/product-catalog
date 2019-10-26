@@ -105,7 +105,7 @@ var pokemonRepository = (function () {
     }).catch(function (e) {
       console.error(e);
     });
-  }
+  };
 
   return {
     add: add,
